@@ -42,13 +42,13 @@ header {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #94a3b8;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   transition: 0.2s ease;
 }
@@ -57,16 +57,39 @@ header {
   color: #ffffff;
 }
 
+/* Login & Sign Up Button Styling */
+.btn-login,
+.btn-signup {
+  padding: 10px 20px;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  background: transparent;
+  transition: 0.3s ease !important;
+}
+
+.btn-login:hover {
+  background: #334155;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-signup:hover {
+  background: #334155;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .nav-links button {
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   color: #ffffff;
   background: #2563eb;
   transition: 0.3s ease;
+  margin-left: 8px; /* Adds a little separation from the auth buttons */
 }
 
 .nav-links button:hover {
@@ -265,7 +288,7 @@ header {
   font-weight: 800;
   letter-spacing: -1px;
   text-align: center;
-  text-transform: capitalize; 
+  text-transform: capitalize;
 }
 
 .section-desc,
@@ -319,7 +342,7 @@ header {
 .features-card p {
   font-size: 16px;
   line-height: 1.6;
-  color: #94a3b8; 
+  color: #94a3b8;
 }
 
 .icon {
@@ -698,11 +721,16 @@ header {
   font-size: 16px;
 }
 
-/* Media Queries */
+/* --- Responsive Media Queries --- */
 @media screen and (max-width: 1024px) {
   .nav-bar {
     padding: 24px 40px;
   }
+
+  .nav-links {
+    gap: 16px;
+  }
+
   .heading h1 {
     font-size: 56px;
   }
@@ -724,28 +752,50 @@ header {
     gap: 20px;
     padding: 24px;
   }
+
   .nav-links {
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+  }
+
+  /* Make auth links act as block buttons on mobile */
+
+  .btn-login,
+  .btn-signup,
+  .nav-links button {
+    width: 100%;
+
+    text-align: center;
+
+    display: block;
+
+    margin-left: 0;
   }
 
   .heading h1 {
     font-size: 38px;
   }
+
   .heading p {
     font-size: 18px;
+
     padding: 0 15px;
   }
 
   .form {
     flex-direction: column;
+
     width: 100%;
+
     padding: 0 20px;
   }
+
   .form input,
   .form button {
     width: 100%;
+
     max-width: 100%;
   }
 
@@ -759,11 +809,37 @@ header {
 
   .cta-block {
     flex-direction: column;
+
     width: 100%;
+
     padding: 0 20px;
   }
+
   .resume-btn,
   .demo-btn {
     width: 100%;
   }
+}
+
+/* anchor tag to button */
+.auth-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  border-color: #3b82f6;
+  color: #ffffff;
+  background: #1e293b;
+  transform: translateY(-2px);
 }
